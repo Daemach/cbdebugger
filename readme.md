@@ -2,7 +2,7 @@
 
 # Welcome To The ColdBox Debugger Module
 
-The ColdBox Debugger module is a light-weigth performance monitor and profiling tool for ColdBox applications.  It can generate a nice debugging panel on every rendered page or a dedicated visualizer to make your ColdBox application development nicer, funer and greater! Yes, funer is a word!
+The ColdBox Debugger module is a light-weight performance monitor and profiling tool for ColdBox applications.  It can generate a nice debugging panel on every rendered page or a dedicated visualizer to make your ColdBox application development nicer, funner and greater! Yes, funner is a word!
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/coldbox-modules/cbdebugger/development/test-harness/includes/images/debugger-visualizer.png">
@@ -50,7 +50,7 @@ This will activate the debugger in your application and render out at the end of
 
 ## Capabilities
 
-The ColdBox debugger is a light-weigth performance monitor and profiler for your ColdBox applications.  It tracks your requests, whether Ajax, traditional or REST, it's environment, execution and much more.  Here is a listing of some of the capabilities you get with the ColdBox Debugger:
+The ColdBox debugger is a light-weight performance monitor and profiler for your ColdBox applications.  It tracks your requests, whether Ajax, traditional or REST, its environment, execution and much more.  Here is a listing of some of the capabilities you get with the ColdBox Debugger:
 
 - Track all incoming requests to your applications in memory or offloaded cache
 - Track exceptions and execution environment
@@ -69,7 +69,7 @@ The ColdBox debugger is a light-weigth performance monitor and profiler for your
 
 ## Settings
 
-The debugger is highly configurable and we have tons of settings to assist you in your development adventures and also in your performance tuning adventures. Please note that the more collectors you active, the slower your application can become.  By default we have pre-selected defaults which add neglible performance to your applications.
+The debugger is highly configurable and we have tons of settings to assist you in your development adventures and also in your performance tuning adventures. Please note that the more collectors you active, the slower your application can become.  By default we have pre-selected defaults which add neglible performance hits to your applications.
 
 Open your `config/coldbox.cfc` configuration object and add into the `moduleSettings` the `cbDebugger` key with the following options:
 
@@ -294,7 +294,7 @@ Profiling objects is great because you can just annotate and forget. Nothing to 
 
 ## WireBox Object Creation Profiling
 
-There will be cases where you need to test the performance of the creation of certain objects in WireBox.  YOu can do so by activating the `profileWireBoxObjectCreation` setting in the `requestTracker`.  Once enabled, you will see the profiling of all objects created by WireBox in the debug timers.
+There will be cases where you need to test the performance of the creation of certain objects in WireBox.  You can do so by activating the `profileWireBoxObjectCreation` setting in the `requestTracker`.  Once enabled, you will see the profiling of all objects created by WireBox in the debug timers.
 
 ## Profiling Interceptions
 
@@ -326,7 +326,7 @@ Once activated, you can add a collection of interception points to profile in yo
 	HTTP Visualizer
 </p>
 
-The debugger will track all incoming http calls into your application.  It will show you all the relevant method, query string, form params, headers, and even the HTTP Body (if enabled).  By default, the HTTP Body is ignored as it can be big and tracking it on every request can reduce performance. However, you can easily turn it on and inspect the incoming packets.
+The debugger will track all incoming http calls into your application.  It will show you all the relevant methods, query strings, form params, headers, and even the HTTP Body (if enabled).  By default, the HTTP Body is ignored as it can be big and tracking it on every request can reduce performance. However, you can easily turn it on and inspect the incoming packets.
 
 ```js
 requestTracker = {
@@ -349,7 +349,7 @@ requestTracker = {
 	ColdBox Tracers
 </p>
 
-The debugger also ships with a LogBox appender we call the ColdBox Tracer.  This tracer will absorb the usage of log `info(), fatal(), error(), warn(), debug()` calls within your application and group them to the request that they initiated from.  You can then visualize and inspect them in your debugger.  All you have to do is activate it and enjoy!
+The debugger also ships with a LogBox appender we call the ColdBox Tracer.  This tracer will absorb the usage of log `info(), fatal(), error(), warn(), debug()` calls within your application and group them within the request that they initiated from.  You can then visualize and inspect them in your debugger.  All you have to do is activate it and enjoy!
 
 ```js
 // ColdBox Tracer Appender Messages
@@ -415,7 +415,7 @@ qb       : {
 },
 ```
 
-Also remember that you can activate the bidining parameters to the sql calls.
+Also remember that you can activate the binding parameters to the sql calls.
 
 ## Modules Panel
 
@@ -426,7 +426,7 @@ Also remember that you can activate the bidining parameters to the sql calls.
 	Modules Tracker
 </p>
 
-If enabled, we will track also the loaded modules in your application:
+If enabled, we will also track the loaded modules in your application:
 
 ```js
 // Modules Reporting
@@ -460,7 +460,7 @@ cachebox : { enabled : true, expanded : false },
 	Debugger Visualizer
 </p>
 
-A part from debugging the incoming request and presenting the debugger at the end of the request, you can also navigate to `/cbdebugger` and visualize the Debugger request tracker.  This panel will monitor ALL incoming requests to your application: rest, soap, ajax, etc.
+Apart from debugging the incoming request and presenting the debugger at the end of the request, you can also navigate to `/cbdebugger` and visualize the Debugger request tracker.  This panel will monitor ALL incoming requests to your application: rest, soap, ajax, etc.
 
 You can execute several commands from this visualizer:
 
@@ -472,7 +472,7 @@ You can execute several commands from this visualizer:
 
 You can then select a specific request and open the request report with all the tracked information.
 
-Please note that the request tracker in the debugger has a configurable capacity for requests.  By default we track the last 25 requests into the application.  You can either increase it or reduce it to your hearts content.  Just note that the more you track, the more memory it consumes.
+Please note that the request tracker in the debugger has a configurable capacity for requests.  By default we track the last 25 requests into the application.  You can increase it or reduce it to your hearts content.  Just note that the more you track, the more memory it consumes.
 
 ```js
 // How many tracking profilers to keep in stack: Default is to monitor the last 20 requests
